@@ -127,6 +127,7 @@ MonoBehaviour:
   deathEffect: {fileID: 6785696849088488325, guid: a7ea4a4dc4a901d4b9a79ecefcb4773c,
     type: 3}
   startHealth: 3
+  killValue: 10
 --- !u!135 &1569368482
 SphereCollider:
   m_ObjectHideFlags: 0

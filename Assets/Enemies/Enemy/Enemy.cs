@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 5f;
     public GameObject deathEffect;
     public int startHealth;
+    public int killValue;
+    
     private int health;
 
     private void Start()
@@ -46,6 +48,8 @@ public class Enemy : MonoBehaviour
         health -= amount;
         if (health > 0)
             return;
+
+        PlayerStats.instance.energy += killValue;
         
         Destroy(Instantiate(deathEffect, transform.position, Quaternion.identity), 5f);
         Destroy(gameObject);

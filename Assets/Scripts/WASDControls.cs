@@ -30,6 +30,17 @@ public class WASDControls : MonoBehaviour
 
         var scrollDelta = Input.mouseScrollDelta.y;
         transform.Translate(Vector3.up * -scrollDelta * zoomSpeed * Time.deltaTime, Space.World);
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, -10, 10);
+        pos.z = Mathf.Clamp(pos.z, -11, 6);
+        pos.y = Mathf.Clamp(pos.y, 2, 15);
+        transform.position = pos;
+
+        var relativeY = (pos.y - 13)/13;
+        var angle = 55 + (30 * relativeY);
+        Vector3 rot = transform.rotation.eulerAngles;
+        rot.x = angle;
+        transform.rotation = Quaternion.Euler(rot);
 
     }
 }
