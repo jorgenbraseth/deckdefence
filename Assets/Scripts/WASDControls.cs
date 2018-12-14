@@ -32,7 +32,7 @@ public class WASDControls : MonoBehaviour
         transform.Translate(Vector3.up * -scrollDelta * zoomSpeed * Time.deltaTime, Space.World);
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, -10, 10);
-        pos.z = Mathf.Clamp(pos.z, -11, 6);
+        pos.z = Mathf.Clamp(pos.z, -11, 3);
         pos.y = Mathf.Clamp(pos.y, 2, 15);
         transform.position = pos;
 
