@@ -123,5 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawning: {fileID: 5169198960629075265, guid: 47c83fcc72457144e95fa4a54fe2f580,
     type: 3}
-  spawnRate: 0.5
+  spawnRate: 1
   nextSpawn: 0

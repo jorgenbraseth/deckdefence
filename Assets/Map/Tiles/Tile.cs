@@ -5,21 +5,16 @@ public class Tile : MonoBehaviour
 {
     public GameObject turret;
     
-    public Color notBuildableColor;
-    public Color buildableColor;
-    private Color originalColor;
-
     private Renderer rend;
 
     public bool TileIsFree => turret == null;
 
 
     private bool CanUseCurrentCardOnThisTile =>
-        TurretBuilder.instance.playingNow != null && TurretBuilder.instance.CanAffordCurrentCard && TileIsFree;
+        TurretBuilder.instance.PlayingNow != null && TurretBuilder.instance.CanAffordCurrentCard && TileIsFree;
     private void Awake()
     {
         rend = GetComponent<Renderer>();
-        originalColor = rend.material.color;
     }
 
     private void OnMouseDown()
@@ -35,26 +30,19 @@ public class Tile : MonoBehaviour
         
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            rend.material.color = originalColor;
+            TurretBuilder.instance.placeholderOff(this);
             return;
         }
 
-        var building = TurretBuilder.instance.playingNow;
+        var building = TurretBuilder.instance.PlayingNow;
         if (building == null)
             return;
 
-        if (CanUseCurrentCardOnThisTile)
-        {
-            rend.material.color = buildableColor;
-        }
-        else
-        {
-            rend.material.color = notBuildableColor;
-        }
+        TurretBuilder.instance.placeholderOn(this);
     }
 
     private void OnMouseExit()
     {
-        rend.material.color = originalColor;
+        TurretBuilder.instance.placeholderOff(this);
     }
 }
