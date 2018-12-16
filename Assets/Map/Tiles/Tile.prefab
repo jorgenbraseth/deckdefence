@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01232e637af4868438b1fc49dcfb26f7, type: 2}
+  - {fileID: 2100000, guid: 5407983d300cdc4479578305aca6e2d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +105,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 0}
-  buildFX: {fileID: 6785696849088488325, guid: 1c34e74034a14ce40a44c8a98e2e86c7, type: 3}
-  notBuildableColor: {r: 1, g: 0.51, b: 0.51, a: 0}
-  buildableColor: {r: 0.553061, g: 1, b: 0.45564514, a: 0}

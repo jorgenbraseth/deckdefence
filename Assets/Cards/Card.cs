@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Card : ScriptableObject
+public abstract class Card : ScriptableObject
 {
     public int cost;
     private PlayerStats stats;
@@ -13,4 +13,6 @@ public class Card : ScriptableObject
     }
 
     public bool CanAfford => stats.energy >= cost;
+
+    public abstract bool playableOn(Tile t);
 }

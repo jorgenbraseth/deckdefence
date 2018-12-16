@@ -16,6 +16,6 @@ public class EnergyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Energy: " + PlayerStats.instance.energy.ToString ("0");
+        text.text = PlayerStats.instance.energy.ToString ("0");
     }
 }
