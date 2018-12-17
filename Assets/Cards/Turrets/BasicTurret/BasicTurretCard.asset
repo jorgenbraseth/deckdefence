@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: BasicTurretCard
   m_EditorClassIdentifier: 
   cost: 75
-  cardUI: {fileID: 2115792727567512732, guid: 6d61e31e5058ad841a0883c6bfe8543c, type: 3}
   icon: {fileID: 21300000, guid: 7daac1649e6a7134bbdbaeaeccc0f856, type: 3}
+  buildableMaterial: {fileID: 2100000, guid: 0bb4517759d49f1408ae26dcd7b0382f, type: 2}
+  nonBuildableMaterial: {fileID: 2100000, guid: 74332d54fc9196042864438fed8c0caa,
+    type: 2}
+  PlayEffect: {fileID: 6785696849088488325, guid: 1c34e74034a14ce40a44c8a98e2e86c7,
+    type: 3}
   buildingPrefab: {fileID: 3350015774153860063, guid: a23f6882a3dac914b868d304355e6818,
     type: 3}

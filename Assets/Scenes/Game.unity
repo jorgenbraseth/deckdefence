@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -51,7 +51,7 @@ LightmapSettings:
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
+    m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -16044,11 +16044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5593382d94ca0f94ab8fb2b218a37422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildFX: {fileID: 6785696849088488325, guid: 1c34e74034a14ce40a44c8a98e2e86c7, type: 3}
   hand: {fileID: 1614024825}
-  buildableMaterial: {fileID: 2100000, guid: 0bb4517759d49f1408ae26dcd7b0382f, type: 2}
-  nonBuildableMaterial: {fileID: 2100000, guid: 74332d54fc9196042864438fed8c0caa,
-    type: 2}
 --- !u!4 &1412253367
 Transform:
   m_ObjectHideFlags: 0
@@ -16078,7 +16074,7 @@ MonoBehaviour:
   cardsInDeck:
   - {fileID: 11400000, guid: 24f4cdd4db26c56469fe99e0a4ac8e64, type: 2}
   - {fileID: 11400000, guid: f849d86009e53a046bc2604a34b179b5, type: 2}
-  - {fileID: 11400000, guid: 24f4cdd4db26c56469fe99e0a4ac8e64, type: 2}
+  - {fileID: 11400000, guid: 4dab8c827c75544438e2e22fb49bf6c7, type: 2}
 --- !u!114 &1412253369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16091,9 +16087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1dc7aaba822e743be85d746b2cc84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: 500
+  energy: 100
   maxEnergy: 500
-  incomeRatePerSecond: 10
+  incomeRatePerSecond: 5
 --- !u!1001 &1420715564
 PrefabInstance:
   m_ObjectHideFlags: 0

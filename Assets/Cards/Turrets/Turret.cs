@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
     public float range = 3f;
     public float rotateSpeed = 15f;
     public LayerMask canHit;
-    public GameObject model;
+    public GameObject badgePanel;
        
     // Update is called once per frame
     void Update()
@@ -54,7 +54,7 @@ public class Turret : MonoBehaviour
         if(target != null)
         {
             var targetDir = target.transform.position - transform.position;
-            var rot = Quaternion.Lerp(head.rotation, Quaternion.LookRotation(targetDir), 15f * Time.deltaTime);
+            var rot = Quaternion.Lerp(head.rotation, Quaternion.LookRotation(targetDir), rotateSpeed * Time.deltaTime);
             rot.x = 0;
             rot.z = 0;
             head.rotation = rot;
@@ -81,5 +81,10 @@ public class Turret : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void AddBadge(GameObject badge)
+    {
+        Instantiate(badge, badgePanel.transform);
     }
 }

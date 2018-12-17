@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
-    public GameObject turret;
+    public Turret turret;
     
     private Renderer rend;
 
@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
 
 
     private bool CanUseCurrentCardOnThisTile =>
-        TurretBuilder.instance.PlayingNow != null && TurretBuilder.instance.CanAffordCurrentCard && TileIsFree;
+        CardPlayer.instance.PlayingNow != null && CardPlayer.instance.CanAffordCurrentCard && TileIsFree;
     private void Awake()
     {
         rend = GetComponent<Renderer>();
@@ -22,7 +22,7 @@ public class Tile : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        TurretBuilder.instance.buildOn(this);
+        CardPlayer.instance.playCard(this);
     }
 
     private void OnMouseOver()
@@ -30,19 +30,19 @@ public class Tile : MonoBehaviour
         
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            TurretBuilder.instance.placeholderOff(this);
+            CardPlayer.instance.placeholderOff(this);
             return;
         }
 
-        var building = TurretBuilder.instance.PlayingNow;
+        var building = CardPlayer.instance.PlayingNow;
         if (building == null)
             return;
 
-        TurretBuilder.instance.placeholderOn(this);
+        CardPlayer.instance.placeholderOn(this);
     }
 
     private void OnMouseExit()
     {
-        TurretBuilder.instance.placeholderOff(this);
+        CardPlayer.instance.placeholderOff(this);
     }
 }

@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 300
   icon: {fileID: 21300000, guid: d4d8d5ce05105b04a876014f583be2c1, type: 3}
+  buildableMaterial: {fileID: 2100000, guid: d4fef1e42e0e78143b1cf00d4de22670, type: 2}
+  nonBuildableMaterial: {fileID: 2100000, guid: 56c4e8efdd07b844d9de6ef427fb5d0e,
+    type: 2}
+  PlayEffect: {fileID: 2745071770253500152, guid: 789841f2cd318a54b917318bf4cb3515,
+    type: 3}
+  castGizmoPrefab: {fileID: 1322071530685246200, guid: 261260dbeb78d0f4e87da8f5d4c59f46,
+    type: 3}
+  Badge: {fileID: 5376187749340469120, guid: 8f912eb468f12ee48809f0b81442b81d, type: 3}

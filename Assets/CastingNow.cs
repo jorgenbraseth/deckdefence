@@ -10,7 +10,7 @@ public class CastingNow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        viz.SetCard(TurretBuilder.instance.PlayingNow);
-        viz.gameObject.SetActive(TurretBuilder.instance.PlayingNow != null);
+        viz.SetCard(CardPlayer.instance.PlayingNow);
+        viz.gameObject.SetActive(CardPlayer.instance.PlayingNow != null);
     }
 }

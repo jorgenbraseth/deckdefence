@@ -6,11 +6,11 @@ public class CardUI : MonoBehaviour
     public Card card;
     public Image cardImage;
     public Text costText;
-    private TurretBuilder builder;
+    private CardPlayer builder;
 
     private void Awake()
     {
-        builder = TurretBuilder.instance;        
+        builder = CardPlayer.instance;        
     }
 
     public void SetCard(Card c)
