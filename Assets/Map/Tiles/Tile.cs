@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Cards.Turrets;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
-    public Turret turret;
+    public ITurret turret;
+
+    public GameObject buildableWidget;
     
     private Renderer rend;
 
@@ -15,6 +18,11 @@ public class Tile : MonoBehaviour
     private void Awake()
     {
         rend = GetComponent<Renderer>();
+    }
+
+    private void Update()
+    {
+        buildableWidget.SetActive(turret == null);
     }
 
     private void OnMouseDown()

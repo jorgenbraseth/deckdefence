@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cards.Turrets;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "Card", menuName = "Cards/Upgrade", order = 1)]
 public class UpgradeCard : Card
@@ -18,9 +19,13 @@ public class UpgradeCard : Card
 
     public void PlayOn(Tile tile)
     {
-        Turret turret = tile.turret;
-        turret.AddBadge(Badge);
-        turret.fireRate *= 2;
+        ITurret turret = tile.turret;
+        turret.AddBadge(Badge);    
+        if(turret is Turret)
+            ((Turret)turret).fireRate *= 2;
+
+        if (turret is LaserTurret)
+            ((LaserTurret) turret).dps *= 2;
         Destroy(Instantiate(PlayEffect, tile.transform.position, Quaternion.identity),3f);
         }
 }

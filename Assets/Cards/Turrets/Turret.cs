@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Cards.Turrets;
+using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, ITurret
 {
     public Transform head;
     private Enemy target;
@@ -53,10 +54,8 @@ public class Turret : MonoBehaviour
         }
         if(target != null)
         {
-            var targetDir = target.transform.position - transform.position;
+            var targetDir = target.transform.position - head.position;
             var rot = Quaternion.Lerp(head.rotation, Quaternion.LookRotation(targetDir), rotateSpeed * Time.deltaTime);
-            rot.x = 0;
-            rot.z = 0;
             head.rotation = rot;
         }        
     }

@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int startHealth;
     public int killValue;
     
-    private int health;
+    public float health;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         var targetPos = wps[movingTo].position;
-        targetPos.y = 0;
+        targetPos.y = transform.position.y;
         
         var towardsTragetWP = targetPos - transform.position;
         if (towardsTragetWP.magnitude <= 0.1f)
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         if (health > 0)

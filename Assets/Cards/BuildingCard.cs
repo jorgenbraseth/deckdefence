@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cards.Turrets;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "Card", menuName = "Cards/Building", order = 1)]
 public class BuildingCard : Card 
@@ -27,7 +28,7 @@ public class BuildingCard : Card
     public void PlayOn(Tile t)
     {
         PlayerStats.instance.energy -= cost;        
-        t.turret = Instantiate(buildingPrefab, t.transform.position, Quaternion.identity).GetComponent<Turret>();
+        t.turret = Instantiate(buildingPrefab, t.transform.position, Quaternion.identity).GetComponent<ITurret>();
         Destroy(Instantiate(PlayEffect, t.transform.position, Quaternion.identity), 5f);
         
     }
